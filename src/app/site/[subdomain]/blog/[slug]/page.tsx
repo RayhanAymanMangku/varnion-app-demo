@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { getWebsiteBySubdomain, getPublishedDataFromGCS, getPageByPath } from '@/lib/website-service'
 import { BlockRenderer } from '@/components/featured/public-blocks/components/block-renderer'
-import { BuilderBlock } from '@/components/featured/public-blocks/types/page.type'
+import { BuilderBlock } from '@/components/featured/public-blocks/types/blocks.type'
 
 interface BlogDetailPageProps {
     params: Promise<{

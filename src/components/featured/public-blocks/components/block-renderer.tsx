@@ -20,7 +20,7 @@ import { BlockX } from "./block-x"
 import { FormBlock } from "./form"
 import { BlogListBlock } from "./blog-list"
 import { BlogDetail } from "./blog-detail"
-import { BuilderBlock } from "../types/page.type"
+import { BuilderBlock } from "../types/blocks.type"
 
 interface BlockRendererProps {
     blocks: BuilderBlock[]
