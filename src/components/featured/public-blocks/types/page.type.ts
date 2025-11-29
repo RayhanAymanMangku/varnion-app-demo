@@ -40,8 +40,5 @@ export interface BlockXElement {
     children?: BlockXElement[]
 }
 
-export interface BuilderBlock {
-    id: string
-    type: string
-    props?: Record<string, unknown>
-}
+
+
