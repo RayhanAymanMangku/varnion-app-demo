@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum TypeDomain {
+  subdomain
+  domain
+}
+
+model Website {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  title     String   @db.VarChar(255)
+  desc      String   @default("") @db.VarChar(255)
+  icon      String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accessDomain AccessDomain[]
+}
+
+model Directory {
+  id        String   @id @default(uuid())
+  websiteId String   @unique
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accessDomain AccessDomain[]
+}
+
+model AccessDomain {
+  id          String     @id @default(uuid())
+  websiteId   String
+  directoryId String
+  name        String     @unique
+  type        TypeDomain
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  directory Directory @relation(fields: [directoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  website   Website   @relation(fields: [websiteId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@index([websiteId])
+}
