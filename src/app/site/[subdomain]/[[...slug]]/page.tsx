@@ -63,12 +63,12 @@ export default async function SubdomainPage({ params }: PageProps) {
         console.log('[PAGE-RENDER] ✅ Page found:', pageData.name);
 
         let blocks: BuilderBlock[] = [];
-        let canvasBackground = 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)'; // ✅ Default
+        let canvasBackground = 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)'; 
 
         try {
             const parsed = JSON.parse(pageData.serialize);
             blocks = parsed.blocks || [];
-            canvasBackground = parsed.canvasBackground || canvasBackground; // ✅ Get from serialize
+            canvasBackground = parsed.canvasBackground || canvasBackground;
 
             console.log('[PAGE-RENDER] ✅ Parsed blocks count:', blocks.length);
             console.log('[PAGE-RENDER] Canvas background:', canvasBackground);

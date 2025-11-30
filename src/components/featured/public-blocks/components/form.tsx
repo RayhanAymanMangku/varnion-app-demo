@@ -179,14 +179,7 @@ export function FormBlock({ categoryId, background, className }: FormBlockProps)
             }
 
             const successMessage = formCategory.successAlert || "Form submitted successfully!"
-            toast.success(successMessage, {
-                duration: 5000,
-                style: {
-                    background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-                    color: 'white',
-                    border: 'none',
-                },
-            })
+            toast.success(successMessage)
 
             setFormData({})
             setFileData({})
@@ -339,7 +332,7 @@ export function FormBlock({ categoryId, background, className }: FormBlockProps)
                         <Button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-6 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
+                            className={cn("w-full  font-semibold py-6 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50", className)}
                         >
                             {isLoading ? (
                                 <>

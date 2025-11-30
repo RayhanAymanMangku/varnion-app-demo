@@ -23,14 +23,14 @@ interface BlogListBlockProps {
 function BlogCardSkeleton({ featured = false }: { featured?: boolean }) {
     return (
         <div className={cn("animate-pulse", featured && "lg:col-span-2 lg:row-span-2")}>
-            <div className="aspect-[16/10] bg-gradient-to-br from-white/5 to-white/10 rounded-3xl mb-4" />
+            <div className="aspect-16/10 bg-linear-to-br from-white/5 to-white/10 rounded-3xl mb-4" />
             <div className="space-y-3">
-                <div className="h-6 bg-gradient-to-r from-white/5 to-white/10 rounded-lg w-3/4" />
-                <div className="h-4 bg-gradient-to-r from-white/5 to-white/10 rounded w-full" />
-                <div className="h-4 bg-gradient-to-r from-white/5 to-white/10 rounded w-5/6" />
+                <div className="h-6 bg-linear-to-r from-white/5 to-white/10 rounded-lg w-3/4" />
+                <div className="h-4 bg-linear-to-r from-white/5 to-white/10 rounded w-full" />
+                <div className="h-4 bg-linear-to-r from-white/5 to-white/10 rounded w-5/6" />
                 <div className="flex gap-2 mt-4">
-                    <div className="h-7 bg-gradient-to-r from-white/5 to-white/10 rounded-full w-20" />
-                    <div className="h-7 bg-gradient-to-r from-white/5 to-white/10 rounded-full w-20" />
+                    <div className="h-7 bg-linear-to-r from-white/5 to-white/10 rounded-full w-20" />
+                    <div className="h-7 bg-linear-to-r from-white/5 to-white/10 rounded-full w-20" />
                 </div>
             </div>
         </div>
